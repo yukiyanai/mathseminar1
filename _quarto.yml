@@ -1,0 +1,44 @@
+project:
+  type: book
+  output-dir: docs
+language: jayy.yml
+
+book: 
+  title: "数理マネジメントセミナーI"
+  author: "矢内 勇生"
+  date: "November 12, 2023"
+  sidebar: 
+    style: docked
+    background: light
+  page-navigation: true
+  page-footer: 
+    center: "Copyright 2023, Yuki Yanai"
+    background: light
+    border: false
+  search: true
+  site-url: https://yukiyanai.github.io/mathseminar1/
+  repo-url: https://github.com/yukiyanai/mathseminar1/
+  repo-branch: main
+  chapters: 
+    - index.qmd
+    - markdown.qmd
+    - latex.qmd
+    - overleaf.qmd
+    - summary.qmd
+    
+format:
+  html:
+    theme: yeti
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    highlight-style: arrow
+    html-math-method: mathjax
+    code-link: true
+    fig-width: 5
+    fig-height: 4
+    link-external-newwindow: true
+
+crossref:
+  ref-hyperlink: true
+

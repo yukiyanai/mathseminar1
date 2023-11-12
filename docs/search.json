@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "数理マネジメントセミナーI",
+    "section": "",
+    "text": "これは、高知工科大学 経済・マネジメント学群で開講されている「数理マネジメントセミナーI」（2023年度2学期）のうち、矢内勇生 担当分の講義用資料である。\n\n\n\nシラバス（講義要項）：PDF\n\n\n\n\n\n第1回から第3回まで（小林豊先生ご担当）の資料はこちら\n\n\n\n\n\n日付（すべて月曜2限）\n内容\nウェブ資料\n\n\n\n\n第4回\n11月13日\nMarkdown入門\nMarkdownを用いた文章作成\n\n\n第5回\n11月20日\nLaTeX入門\nLaTeX入門\n\n\n第6回\n12月11日\nLaTeX応用\nOverleaf の使い方\n\n\n第7回\n12月25日\n総括\nまとめ"
+  },
+  {
+    "objectID": "markdown.html",
+    "href": "markdown.html",
+    "title": "2  Markdown",
+    "section": "",
+    "text": "今日の目標"
+  },
+  {
+    "objectID": "markdown.html#markdown-とは",
+    "href": "markdown.html#markdown-とは",
+    "title": "2  Markdown",
+    "section": "2.1 Markdown とは",
+    "text": "2.1 Markdown とは\nMarkdown（マークダウン）は、文書を作成するために使われる軽量マークアップ言語の1つである。最もよく知られたマークアップ言語として、ウェブサイトなどの作成に使われるHTML (HyperText Markup Language) があるが、HTMLは（難しくはないが）自力で書くのはやや面倒である。面倒なMarkupをより簡単にしようというのがMarkddownである。\n例えば、ここに高知工科大学の公式サイトへのリンクを貼ることにしよう。 HTMLを使うと、「aタグ」と呼ばれるものを使って次のように書くことができる。\n<a href=\"https://www.kochi-tech.ac.jp/\" target=\"_blank\">高知工科大学</a>\nそれに対し、Markdownでは、\n[高知工科大学](https://www.kochi-tech.ac.jp/)\nと書くことができる。実際のリンクは 高知工科大学 のようになる。\nMicrosoft Word と異なり、Markdown で書いた文書はVS Code などのテキストエディタで編集できるのでファイルの受け渡しにも便利（相手がWordを持っていなくてもOK）である。\nファイルの編集が完了し、文書として提出・公開するときは、Markdown からHTMLやPDF（あるいはWord）の文書に変換する。この文書（いま皆さんが読んでいるコレ！）は、Markdownを使って書いたファイルからHTMLに変換されてウェブ上に公開されたものである。\n今後、コンピュータを使って簡単な文書を作成する際には Markdown を使う習慣を付けると良いだろう。Markdownを使いこなせるようになると、\n\nレポートの作成\nプレゼンテーション用のスライドの作成\n卒業論文の執筆（卒論の執筆に使うのは、R Markdown あるいは Quarto Markdown というMarkdown ベースの文書）\n\nなどができるようになる。"
+  },
+  {
+    "objectID": "markdown.html#練習",
+    "href": "markdown.html#練習",
+    "title": "2  Markdown",
+    "section": "2.2 練習",
+    "text": "2.2 練習\n\n2.2.1 Markdown ファイルの準備\nMarkdownを使った文書を作ってみよう。\nまず、ターミナルを使ってホームディレクトリにseminar1という名前のディレクトリを作る（既に同じ名前のディレクトリがあるなら、これは実行しなくてよい）。\n$ mkdir ~/seminar1\n次に、seminar1 ディレクトリに移動して、ディレクトリ内に練習用のMarkdownファイルを作るう。Markdownファイルの拡張子は .md である。\n$ cd ~/seminar1\n$ touch exercise4.md\n新たに作った空のMarkdownファイルをVS Code で開く。\n$ code exercise4.md\n以降の作業はVS Code 上で行う。\n\n\n2.2.2 Markdown を使ってみよう\nMarkdown文法の基本 を参考に、構造化された文書を作ってみよう！\n\n見出しを作る\n段落を作る\n箇条書き\n\n番号なしの箇条書き\n番号付きの箇条書き\n\n文字の強調\nリンクを貼る\n表の作成\n画像の挿入"
+  },
+  {
+    "objectID": "markdown.html#第4回の課題",
+    "href": "markdown.html#第4回の課題",
+    "title": "2  Markdown",
+    "section": "2.3 第4回の課題",
+    "text": "2.3 第4回の課題\n課題1（小林先生に提出した課題）を、Markdownを利用して綺麗な文書に整理し直して提出しなさい。その際、以下の5つの条件を満たすように文書を作成すること。\n\n文書のタイトル（第1レベルの見出し）は「数理セミナーI：課題4」にする（カギカッコは不要）\nタイトルの下に、氏名、学籍番号、文書の作成日を記す。\n各項目（1, 2, 3）に第2レベルの見出し（節タイトル）を付ける\n項目1は、箇条書きに変更する。\n項目2と項目3については、強調したい部分を太字にする。\n\n\n提出期限：2023年11月18日（土）午後10時（日本時間）\n提出方法：ファイルをメールに添付して担当教員に送信する\n\nメールの題名：「数理セミナー1の課題4」\n提出するファイルは以下の2つ（以下のファイル名のStudentID の部分は自分の学籍番号に置き換えること。例：kadai4_1270999.md）\n\nkadai4_StudentID.md\nkadai4_StudentID.pdf"
+  },
+  {
+    "objectID": "latex.html",
+    "href": "latex.html",
+    "title": "3  LaTeX 入門",
+    "section": "",
+    "text": "準備中"
+  },
+  {
+    "objectID": "overleaf.html",
+    "href": "overleaf.html",
+    "title": "4  Overleafの使い方",
+    "section": "",
+    "text": "準備中"
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "5  まとめ",
+    "section": "",
+    "text": "準備中"
+  }
+]

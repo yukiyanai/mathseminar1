@@ -1,0 +1,19 @@
+# はじめに
+
+これは、[高知工科大学](https://www.kochi-tech.ac.jp/) [経済・マネジメント学群](https://www.kochi-tech.ac.jp/academics/mng/)で開講されている「数理マネジメントセミナーI」（2023年度2学期）のうち、[矢内勇生](https://yukiyanai.github.io/jp/) 担当分の講義用資料である。
+
+## 基本情報 {#sec-basicinfo}
+
+- シラバス（講義要項）：[PDF](https://yukiyanai.github.io/jp/classes/seminar1/seminar1_syllabus_kobayashi_yanai.pdf)
+
+
+## 授業計画
+
+- 第1回から第3回まで（小林豊先生ご担当）の資料は[こちら](https://kut-econ.github.io/math_seminar1/)
+
+|      | 日付（すべて月曜2限） | 内容 | ウェブ資料 |
+| :--- | :--- |  :--- |  :--- |
+| 第4回 | 11月13日 | Markdown入門 | [Markdownを用いた文章作成](markdown.html) |
+| 第5回 | 11月20日 | LaTeX入門 | [LaTeX入門](latex.html) |
+| 第6回 | 12月11日 | LaTeX応用 | [Overleaf の使い方](overleaf.html) |
+| 第7回 | 12月25日 | 総括 | [まとめ](summary.html) |
