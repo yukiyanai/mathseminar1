@@ -4,21 +4,28 @@
     "href": "index.html",
     "title": "数理マネジメントセミナーI",
     "section": "",
-    "text": "これは、高知工科大学 経済・マネジメント学群で開講されている「数理マネジメントセミナーI」（2023年度2学期）のうち、矢内勇生 担当分の講義用資料である。\n\n\n\nシラバス（講義要項）：PDF\n\n\n\n\n\n第1回から第3回まで（小林豊先生ご担当）の資料はこちら\n\n\n\n\n\n日付（すべて月曜2限）\n内容\nウェブ資料\n\n\n\n\n第4回\n11月13日\nMarkdown入門\nMarkdownを用いた文章作成\n\n\n第5回\n11月20日\nLaTeX入門\nLaTeX入門\n\n\n第6回\n12月11日\nLaTeX応用\nOverleaf の使い方\n\n\n第7回\n12月25日\n総括\nまとめ"
+    "text": "1 はじめに\nこれは、高知工科大学 経済・マネジメント学群で開講されている「数理マネジメントセミナーI」（2023年度2学期）のうち、矢内勇生 担当分の講義用資料である。"
   },
   {
-    "objectID": "markdown.html",
-    "href": "markdown.html",
-    "title": "2  Markdown",
-    "section": "",
-    "text": "今日の目標"
+    "objectID": "index.html#sec-basicinfo",
+    "href": "index.html#sec-basicinfo",
+    "title": "数理マネジメントセミナーI",
+    "section": "1.1 基本情報",
+    "text": "1.1 基本情報\n\nシラバス（講義要項）：PDF"
+  },
+  {
+    "objectID": "index.html#授業計画",
+    "href": "index.html#授業計画",
+    "title": "数理マネジメントセミナーI",
+    "section": "1.2 授業計画",
+    "text": "1.2 授業計画\n\n第1回から第3回まで（小林豊先生ご担当）の資料はこちら\n\n\n\n\n\n日付（すべて月曜2限）\n内容\nウェブ資料\n\n\n\n\n第4回\n11月13日\nMarkdown入門\nMarkdownを用いた文章作成\n\n\n第5回\n11月20日\nLaTeX入門\nLaTeX入門\n\n\n第6回\n12月11日\nLaTeX応用\nOverleaf の使い方\n\n\n第7回\n12月25日\n総括\nまとめ"
   },
   {
     "objectID": "markdown.html#markdown-とは",
     "href": "markdown.html#markdown-とは",
     "title": "2  Markdown",
     "section": "2.1 Markdown とは",
-    "text": "2.1 Markdown とは\nMarkdown（マークダウン）は、文書を作成するために使われる軽量マークアップ言語の1つである。最もよく知られたマークアップ言語として、ウェブサイトなどの作成に使われるHTML (HyperText Markup Language) があるが、HTMLは（難しくはないが）自力で書くのはやや面倒である。面倒なMarkupをより簡単にしようというのがMarkddownである。\n例えば、ここに高知工科大学の公式サイトへのリンクを貼ることにしよう。 HTMLを使うと、「aタグ」と呼ばれるものを使って次のように書くことができる。\n<a href=\"https://www.kochi-tech.ac.jp/\" target=\"_blank\">高知工科大学</a>\nそれに対し、Markdownでは、\n[高知工科大学](https://www.kochi-tech.ac.jp/)\nと書くことができる。実際のリンクは 高知工科大学 のようになる。\nMicrosoft Word と異なり、Markdown で書いた文書はVS Code などのテキストエディタで編集できるのでファイルの受け渡しにも便利（相手がWordを持っていなくてもOK）である。\nファイルの編集が完了し、文書として提出・公開するときは、Markdown からHTMLやPDF（あるいはWord）の文書に変換する。この文書（いま皆さんが読んでいるコレ！）は、Markdownを使って書いたファイルからHTMLに変換されてウェブ上に公開されたものである。\n今後、コンピュータを使って簡単な文書を作成する際には Markdown を使う習慣を付けると良いだろう。Markdownを使いこなせるようになると、\n\nレポートの作成\nプレゼンテーション用のスライドの作成\n卒業論文の執筆（卒論の執筆に使うのは、R Markdown あるいは Quarto Markdown というMarkdown ベースの文書）\n\nなどができるようになる。"
+    "text": "2.1 Markdown とは\nMarkdown（マークダウン）は、文書を作成するために使われる軽量マークアップ言語の1つである。最もよく知られたマークアップ言語として、ウェブサイトなどの作成に使われるHTML (HyperText Markup Language) があるが、HTMLは（難しくはないが）自力で書くのはやや面倒である。面倒なMarkupをより簡単にしようというのがMarkddownである。\n例えば、ここに高知工科大学の公式サイトへのリンクを貼ることにしよう。 HTMLを使うと、「aタグ」と呼ばれるものを使って次のように書くことができる。\n&lt;a href=\"https://www.kochi-tech.ac.jp/\" target=\"_blank\"&gt;高知工科大学&lt;/a&gt;\nそれに対し、Markdownでは、\n[高知工科大学](https://www.kochi-tech.ac.jp/)\nと書くことができる。実際のリンクは 高知工科大学 のようになる。\nMicrosoft Word と異なり、Markdown で書いた文書はVS Code などのテキストエディタで編集できるのでファイルの受け渡しにも便利（相手がWordを持っていなくてもOK）である。\nファイルの編集が完了し、文書として提出・公開するときは、Markdown からHTMLやPDF（あるいはWord）の文書に変換する。この文書（いま皆さんが読んでいるコレ！）は、Markdownを使って書いたファイルからHTMLに変換されてウェブ上に公開されたものである。\n今後、コンピュータを使って簡単な文書を作成する際には Markdown を使う習慣を付けると良いだろう。Markdownを使いこなせるようになると、\n\nレポートの作成\nプレゼンテーション用のスライドの作成\n卒業論文の執筆（卒論の執筆に使うのは、R Markdown あるいは Quarto Markdown というMarkdown ベースの文書）\n\nなどができるようになる。"
   },
   {
     "objectID": "markdown.html#練習",
@@ -35,11 +42,39 @@
     "text": "2.3 第4回の課題\n課題1（小林先生に提出した課題）を、Markdownを利用して綺麗な文書に整理し直して提出しなさい。その際、以下の5つの条件を満たすように文書を作成すること。\n\n文書のタイトル（第1レベルの見出し）は「数理セミナーI：課題4」にする（カギカッコは不要）\nタイトルの下に、氏名、学籍番号、文書の作成日を記す。\n各項目（1, 2, 3）に第2レベルの見出し（節タイトル）を付ける\n項目1は、箇条書きに変更する。\n項目2と項目3については、強調したい部分を太字にする。\n\n\n提出期限：2023年11月18日（土）午後10時（日本時間）\n提出方法：ファイルをメールに添付して担当教員に送信する\n\nメールの題名：「数理セミナー1の課題4」\n提出するファイルは以下の2つ（以下のファイル名のStudentID の部分は自分の学籍番号に置き換えること。例：kadai4_1270999.md）\n\nkadai4_StudentID.md\nkadai4_StudentID.pdf"
   },
   {
-    "objectID": "latex.html",
-    "href": "latex.html",
+    "objectID": "latex.html#latex-とは",
+    "href": "latex.html#latex-とは",
     "title": "3  LaTeX 入門",
-    "section": "",
-    "text": "準備中"
+    "section": "3.1 LaTeX とは",
+    "text": "3.1 LaTeX とは\nLaTeX（読み：“lay-tech”’ または「らてふ」）とは、文字ベースの組版処理システムである。 ものすごく単純化すると、綺麗にフォーマットされた文書を作成するためのツールである。特に、電子ファイル上で見た目が美しい数式を書くためには欠かせないものであり、経済学分野の論文（数式をたくさん使う！）執筆でよく利用されている。さらに、数学の教材を作成するためにも広く利用されている。\n数理マネジメント専攻に進む（あるいは数学の教員免許を取得する）予定なら、使えるようになっておいたほうがよいだろう。そのような予定がなくても、LaTeXの書き方を知っているとそれを他の場面で流用できる（まさにそれについて今回説明する）ので、基本を身に付けておくと、役に立つことがあるかもしれない。"
+  },
+  {
+    "objectID": "latex.html#markdown-でlatex記法の数式を書く",
+    "href": "latex.html#markdown-でlatex記法の数式を書く",
+    "title": "3  LaTeX 入門",
+    "section": "3.2 Markdown でLaTeX記法の数式を書く",
+    "text": "3.2 Markdown でLaTeX記法の数式を書く\nLaTeXの記法を利用すると、Markdown文書に数式を書くことができる。以下、その書き方を説明する。\n文の中に数式を入れたいときは、数式を書くためのコードを$で挟み、文中に挿入する。 例えば、単純な足し算は $1 + 3 = 4$ と書くことで、\\(1 + 3 = 4\\) と表示される。あるいは、$Y_i = \\beta_0 + \\beta_1 X_i + \\varepsilon_i$ と書けば、\\(Y_i = \\beta_0 + \\beta_1 X_i + \\varepsilon_i\\) となる。\n数式を独立した行に表示したいときは、以下のようにする。\n$$\n\\bar{x} = \\frac{1}{N} \\sum_{n=1}^N x_n\n$$\nこれは、次のように表示される。 \\[\n\\bar{x} = \\frac{1}{N} \\sum_{n=1}^N x_n\n\\]\n文中に和の記号を書くと、例えば $\\bar{x} = \\frac{1}{N} \\sum_{n=1}^N x_n$ と書くと、\\(\\bar{x} = \\frac{1}{N} \\sum_{n=1}^N x_n\\)と表示される。上で示した独立した数式と比べると、和の記号の上下にある文字の位置が変わっており、分数は縦方向につぶれていることがわかる。これは、そうしないと文と数式の高さが大きく異なってしまうためである。文中でも無理やり独立した数式と同じような表示にしたいときは\\displaystyle という命令を使い、$\\displaystyle \\bar{x} = \\frac{1}{N} \\sum_{n=1}^N x_n$とすれば、\\(\\displaystyle \\bar{x} = \\frac{1}{N} \\sum_{n=1}^N x_n\\) となる。\n複数行にわたる数式を書きたいときは、aligned 環境を使って以下のように書くことができる。\n$$\n\\begin{aligned}\n  \\bar{x} \n   &= \\frac{1}{N} \\sum_{n=1}^N x_n \\\\\n   &= \\frac{1}{N} \\left(x_1 + x_2 + \\cdots + x_N \\right)\n  \\end{aligned}\n$$\n上のコードでは、\\\\ で改行している。また、各行は & の位置で整列する。結果は次のようになる。 \\[\n\\begin{aligned}\n  \\bar{x}\n   &= \\frac{1}{N} \\sum_{n=1}^N x_n \\\\\n   &= \\frac{1}{N} \\left(x_1 + x_2 + \\cdots + x_N \\right)\n\\end{aligned}\n\\] 上の例からわかるとおり、分数は\\frac{分子}{分母}で書くことができる。\n数式でカッコを使うとき、() と [] はそのまま入力すればよいが、{}を使いたいときは \\{ や\\}のようにする必要がある。また、\\left( \\right) 、\\left\\{ \\right\\}、\\left[ \\right] のようにすると、カッコの中身に合わせてカッコの大きさを調節してくれる。例えば、\n$$\n(x - \\frac{1}{2})(y - \\frac{2}{\\frac{3}{31}})^2\n$$\nと入力すると、 \\[\n(x - \\frac{1}{2})(y - \\frac{2}{\\frac{3}{31}})^2\n\\] と表示されるが、\n$$\n\\left(x - \\frac{1}{2} \\right) \\left(y - \\frac{2}{\\frac{3}{31}} \\right)^2\n$$\nと入力すると、 \\[\n\\left(x - \\frac{1}{2} \\right) \\left(y - \\frac{2}{\\frac{3}{31}} \\right)^2\n\\] と、なる。\n下付きの添字は、_（アンダースコア）を使って、x_i と書くと、\\(x_i\\)のように表示される。 ただし、添字が2文字以上のときにx_23 のようにすると\\(x_23\\)となってしまうので、\\(x_{23}\\)にするためにはx_{23}とする。\n上付きの文字は、^（キャレット）を使ってx^aのように書くと、\\(x^a\\) のように表示される。 下付きの場合と同様に、2文字以上のときにはx^{a-b}のようにすると\\(x^{a-b}\\)となる。\n\n3.2.1 よく使う記号\nよく使う記号を以下に示す\n\n\n\n\n\n\n\n\nコード\n出力\n使用例\n\n\n\n\n\\times\n\\(\\times\\)\n\\(x \\times y\\)\n\n\n\\cdot\n\\(\\cdot\\)\n\\(x \\cdot y\\)\n\n\n\\cdots\n\\(\\cdots\\)\n\\(x_1 + x_2 + \\cdots + x_N\\)\n\n\n\\dots\n\\(\\dots\\)\n\\(a, b, \\dots, z\\)\n\n\n\\Pr(.)\n\\(\\Pr(.)\\)\n\\(\\Pr(X =x )\\)\n\n\n\\sum\n\\(\\sum\\)\n\\(\\sum (x_i - \\mu)^2\\)\n\n\n\\sum_{n = 1}^{N}\n\\(\\displaystyle \\sum_{n = 1}^{N}\\)\n\\(\\displaystyle \\sum_{n = 1}^{N} (x_n - \\bar{x})^2\\)\n\n\n\\prod\n\\(\\prod\\)\n\\(\\displaystyle \\prod_{j=1}^J x_j\\)\n\n\n\\sqrt{a}\n\\(\\sqrt{a}\\)\n\\(\\sqrt{xyz}\\)\n\n\n\\exp(.)\n\\(\\exp(.)\\)\n\\(\\exp(-\\lambda)\\)\n\n\n\\log(.)\n\\(\\log(.)\\)\n\\(\\log(2a)\\)\n\n\n\\partial\n\\(\\partial\\)\n\\(\\displaystyle \\frac{\\partial f(x, y)}{\\partial x}\\)\n\n\n\\int\n\\(\\int\\)\n\\(\\displaystyle \\int_{a}^b f(x) dx\\)\n\n\n\\lim\n\\(\\lim\\)\n\\(\\displaystyle \\lim_{n \\to \\infty} \\sum_{i=1}^n \\frac{1}{n!}\\)\n\n\n\\infty\n\\(\\infty\\)\n\n\n\n\\sim\n\\(\\sim\\)\n\\(X \\sim \\mbox{Normal}(\\mu, \\sigma)\\)\n\n\n\\to\n\\(\\to\\)\n\n\n\n\\binom{n}{k}\n\\(\\displaystyle \\binom{n}{k}\\)\n\\(\\displaystyle \\binom{n}{k} = \\frac{n!}{k! (n-k)!}\\)\n\n\n\\bar{x}\n\\(\\bar{x}\\)\n\n\n\n\\hat{x}\n\\(\\hat{x}\\)\n\n\n\n\\widehat{abcde}\n\\(\\widehat{abcde}\\)\n\n\n\n\\tilde{x}\n\\(\\tilde{x}\\)\n\n\n\n\n\n\n3.2.2 ギリシャ文字\nギリシャ文字も数式環境の中で使える。文章中にギリシャ文字を入れたいときは、$と$の間に以下のコードを入力する（よく使うものだけ挙げる）。\n\n\n\n文字\nコード\n\n\n\n\n\\(\\alpha\\)\n\\alpha\n\n\n\\(\\beta\\)\n\\beta\n\n\n\\(\\gamma\\)\n\\gamma\n\n\n\\(\\mu\\)\n\\mu\n\n\n\\(\\sigma\\)\n\\sigma\n\n\n\\(\\lambda\\)\n\\lambda\n\n\n\\(\\phi\\)\n\\phi\n\n\n\\(\\pi\\)\n\\pi\n\n\n\\(\\delta\\)\n\\delta\n\n\n\\(\\epsilon\\)\n\\epsilon\n\n\n\\(\\varepsilon\\)\n\\varepsilon\n\n\n\\(\\nu\\)\n\\nu\n\n\n\\(\\xi\\)\n\\xi\n\n\n\\(\\zeta\\)\n\\zeta\n\n\n\nギリシャ文字の大文字の書き方は、以下の2つのパタンに分かれる。\n\nコードの1文字目を大文字にする\n\n例）\\(\\delta\\)の大文字\\(\\Delta\\) は \\Delta\n例）\\(\\phi\\)の大文字\\(\\Phi\\) は \\Phi\n\nアルファベットの大文字をそのまま使う。\n\n例）\\(\\alpha\\)の大文字AはA\n例）\\(\\beta\\)の大文字BはB\n\n\n\n\n\n\n\n\n記号の使い分け\n\n\n\n\n和算の記号\\(\\sum\\) は\\Sigmaではなく、\\sum\n\n\\sum: \\(\\sum\\)\n\\Sigma: \\(\\Sigma\\)\n\n乗算の記号\\(\\prod\\)は\\Pi ではなく\\prod\n\n\\prod: \\(\\prod\\)\n\\Pi: \\(\\Pi\\)"
+  },
+  {
+    "objectID": "latex.html#練習",
+    "href": "latex.html#練習",
+    "title": "3  LaTeX 入門",
+    "section": "3.3 練習",
+    "text": "3.3 練習\n各自持参した数学の教科書に載っている数式を、LaTeX記法を使ったMarkdown文書で再現してみよう！"
+  },
+  {
+    "objectID": "latex.html#第5回の課題",
+    "href": "latex.html#第5回の課題",
+    "title": "3  LaTeX 入門",
+    "section": "3.4 第5回の課題",
+    "text": "3.4 第5回の課題\nMarkdownで以下の問題に対する解答を作成し、解答を記したMarkdownファイル （拡張子が .md）とPDFファイル（拡張子が.pdf）の2つのファイルを提出しなさい。その際、以下の注意を守ること。\n\n第1レベルの見出しを「数理セミナーI：課題5」にしなさい。\n\n見出しの後に氏名と学籍番号を記しなさい。\n\n各問は見出し（第2レベルの見出し）を付けて区別しなさい。\n解答の前に問題文をそのまま書き写しなさい。\n解答には、途中の計算過程も記しなさい。\n\n問と解答は見出し（第3レベルの見出し）を付けて区別しなさい。\n\n提出期限：2023年12月4日（月）午後10時（日本時間）\n提出方法：ファイルをメールに添付して担当教員に送信する\n\nメールの題名：「数理セミナー1の課題5」\n提出するファイル名は kadai5_StudentID.md とkadai5_StudentID.pdf\n\nファイル名のStudentID の部分は自分の学籍番号に置き換えること（例：kadai5_1270999.md）\n\n\n\n\n\n\n\n\n\n導関数の定義\n\n\n\n以下の式で表される\\(f'(x)\\)を\\(f(x)\\)の導関数とよぶ。 \\[\nf'(x) = \\lim_{h \\to 0} \\frac{f(x + h) - f(x)}{h}\n\\]\n\n\n\n問1：\\(f(x)\\)が微分可能な関数であるとき、次の極限を\\(a\\)、\\(f(a)\\)、\\(f'(a)\\)を用いて表わせ。\n\n\\(\\displaystyle \\lim_{h \\to 0} \\frac{f(a + 2h) - f(a)}{h}\\)\n\\(\\displaystyle \\lim_{h \\to 0} \\frac{f(a - h) - f(a)}{h}\\)\n\n\n\n問2：つぎの関数\\(y=f(x)\\)の2階までの導関数を求めよ。\n\n\\(\\displaystyle x^4 - 2x^3 + x + 1\\)\n\\(\\displaystyle e^{-x^2}\\)\n\n\n\n問3：つぎの方程式を解きなさい。\n\n\\(\\displaystyle \\log (x -1) + \\log 2 = \\log x\\)\n\\(\\displaystyle \\log_3 x - \\log_9 (x + 2) = 0\\)"
+  },
+  {
+    "objectID": "latex.html#参考文献",
+    "href": "latex.html#参考文献",
+    "title": "3  LaTeX 入門",
+    "section": "3.5 参考文献",
+    "text": "3.5 参考文献\nLaTeXについてもっと知りたい者には以下の参考書を勧める。これ1冊あれば、卒業まで困らないはずだ。ただし、2023年12月に改訂第9版が発売予定なので、購入するなら新しい版が出てからにしたほうがよいだろう。\n\n奥村晴彦、黒木裕介. 2020.『[改訂第8版] LaTeX 2\\(\\varepsilon\\) 美文書作成入門』技術評論社."
   },
   {
     "objectID": "overleaf.html",

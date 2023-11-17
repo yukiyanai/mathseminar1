@@ -1,3 +1,213 @@
 # LaTeX 入門
 
-準備中
+**今日の目標**
+
+- Markdown文書でLaTeX記法を使った数式を書く方法を理解する！
+
+
+## LaTeX とは
+
+LaTeX（読み："lay-tech"' または「らてふ」）とは、文字ベースの組版処理システムである。
+ものすごく単純化すると、綺麗にフォーマットされた文書を作成するためのツールである。特に、電子ファイル上で見た目が美しい数式を書くためには欠かせないものであり、経済学分野の論文（数式をたくさん使う！）執筆でよく利用されている。さらに、数学の教材を作成するためにも広く利用されている。
+
+数理マネジメント専攻に進む（あるいは数学の教員免許を取得する）予定なら、使えるようになっておいたほうがよいだろう。そのような予定がなくても、LaTeXの書き方を知っているとそれを他の場面で流用できる（まさにそれについて今回説明する）ので、基本を身に付けておくと、役に立つことがあるかもしれない。
+
+
+## Markdown でLaTeX記法の数式を書く
+
+LaTeXの記法を利用すると、Markdown文書に数式を書くことができる。以下、その書き方を説明する。
+
+文の中に数式を入れたいときは、数式を書くためのコードを`$`で挟み、文中に挿入する。
+例えば、単純な足し算は `$1 + 3 = 4$` と書くことで、$1 + 3 = 4$ と表示される。あるいは、`$Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i$` と書けば、$Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i$ となる。
+
+数式を独立した行に表示したいときは、以下のようにする。
+````md
+$$
+\bar{x} = \frac{1}{N} \sum_{n=1}^N x_n
+$$
+````
+これは、次のように表示される。
+$$
+\bar{x} = \frac{1}{N} \sum_{n=1}^N x_n
+$$
+
+文中に和の記号を書くと、例えば `$\bar{x} = \frac{1}{N} \sum_{n=1}^N x_n$` と書くと、$\bar{x} = \frac{1}{N} \sum_{n=1}^N x_n$と表示される。上で示した独立した数式と比べると、和の記号の上下にある文字の位置が変わっており、分数は縦方向につぶれていることがわかる。これは、そうしないと文と数式の高さが大きく異なってしまうためである。文中でも無理やり独立した数式と同じような表示にしたいときは`\displaystyle` という命令を使い、`$\displaystyle \bar{x} = \frac{1}{N} \sum_{n=1}^N x_n$`とすれば、$\displaystyle \bar{x} = \frac{1}{N} \sum_{n=1}^N x_n$ となる。
+
+複数行にわたる数式を書きたいときは、`aligned` 環境を使って以下のように書くことができる。
+```md
+$$
+\begin{aligned}
+  \bar{x} 
+   &= \frac{1}{N} \sum_{n=1}^N x_n \\
+   &= \frac{1}{N} \left(x_1 + x_2 + \cdots + x_N \right)
+  \end{aligned}
+$$
+````
+
+上のコードでは、```` \\ ```` で改行している。また、各行は `&` の位置で整列する。結果は次のようになる。
+$$
+\begin{aligned}
+  \bar{x} 
+   &= \frac{1}{N} \sum_{n=1}^N x_n \\
+   &= \frac{1}{N} \left(x_1 + x_2 + \cdots + x_N \right)
+\end{aligned}
+$$
+上の例からわかるとおり、分数は`\frac{分子}{分母}`で書くことができる。
+
+数式でカッコを使うとき、`()` と `[]` はそのまま入力すればよいが、`{}`を使いたいときは `\{` や`\}`のようにする必要がある。また、`\left( \right)` 、`\left\{ \right\}`、`\left[ \right]` のようにすると、カッコの中身に合わせてカッコの大きさを調節してくれる。例えば、
+````md
+$$
+(x - \frac{1}{2})(y - \frac{2}{\frac{3}{31}})^2
+$$
+````
+と入力すると、
+$$
+(x - \frac{1}{2})(y - \frac{2}{\frac{3}{31}})^2
+$$
+と表示されるが、
+````md
+$$
+\left(x - \frac{1}{2} \right) \left(y - \frac{2}{\frac{3}{31}} \right)^2
+$$
+````
+と入力すると、
+$$
+\left(x - \frac{1}{2} \right) \left(y - \frac{2}{\frac{3}{31}} \right)^2
+$$
+と、なる。
+
+
+
+下付きの添字は、`_`（アンダースコア）を使って、`x_i` と書くと、$x_i$のように表示される。
+ただし、添字が2文字以上のときに`x_23` のようにすると$x_23$となってしまうので、$x_{23}$にするためには`x_{23}`とする。
+
+上付きの文字は、`^`（キャレット）を使って`x^a`のように書くと、$x^a$ のように表示される。
+下付きの場合と同様に、2文字以上のときには`x^{a-b}`のようにすると$x^{a-b}$となる。
+
+
+### よく使う記号
+
+よく使う記号を以下に示す
+
+| コード | 出力 | 使用例 |
+| --- | --- | --- |
+| `\times` | $\times$  | $x \times y$|
+| `\cdot` | $\cdot$ | $x \cdot y$ |
+| `\cdots` | $\cdots$ | $x_1 + x_2 + \cdots + x_N$ |
+| `\dots` | $\dots$ | $a, b, \dots, z$ |
+| `\Pr(.)` | $\Pr(.)$ | $\Pr(X =x )$ |
+| `\sum` | $\sum$ | $\sum (x_i - \mu)^2$ |
+| `\sum_{n = 1}^{N}` | $\displaystyle \sum_{n = 1}^{N}$ | $\displaystyle \sum_{n = 1}^{N} (x_n - \bar{x})^2$ |
+| `\prod` | $\prod$ | $\displaystyle \prod_{j=1}^J x_j$ |
+| `\sqrt{a}` | $\sqrt{a}$ | $\sqrt{xyz}$
+| `\exp(.)` | $\exp(.)$ | $\exp(-\lambda)$ |
+| `\log(.)`  | $\log(.)$ | $\log(2a)$|
+| `\partial` | $\partial$ | $\displaystyle \frac{\partial f(x, y)}{\partial x}$ |
+| `\int` | $\int$ | $\displaystyle \int_{a}^b f(x) dx$ |
+| `\lim` | $\lim$ | $\displaystyle \lim_{n \to \infty} \sum_{i=1}^n \frac{1}{n!}$ |
+| `\infty`  | $\infty$  | |
+| `\sim` | $\sim$ | $X \sim \mbox{Normal}(\mu, \sigma)$ |
+| `\to` | $\to$ |  |
+| `\binom{n}{k}` | $\displaystyle \binom{n}{k}$ | $\displaystyle \binom{n}{k} = \frac{n!}{k! (n-k)!}$ |
+| `\bar{x}` | $\bar{x}$ | |
+| `\hat{x}` | $\hat{x}$ | |
+| `\widehat{abcde}` | $\widehat{abcde}$ | |
+| `\tilde{x}` | $\tilde{x}$ | |
+
+### ギリシャ文字
+
+ギリシャ文字も数式環境の中で使える。文章中にギリシャ文字を入れたいときは、`$`と`$`の間に以下のコードを入力する（よく使うものだけ挙げる）。
+
+| 文字 | コード |
+| --- | --- |
+| $\alpha$ | `\alpha` |
+| $\beta$ | `\beta` |
+| $\gamma$ | `\gamma` |
+| $\mu$ | `\mu` |
+| $\sigma$ | `\sigma` |
+| $\lambda$ | `\lambda` |
+| $\phi$ | `\phi` |
+| $\pi$ | `\pi` |
+| $\delta$ | `\delta` |
+| $\epsilon$ | `\epsilon` |
+| $\varepsilon$ | `\varepsilon` |
+| $\nu$ | `\nu` |
+| $\xi$ | `\xi` |
+| $\zeta$ | `\zeta` |
+
+
+
+ギリシャ文字の大文字の書き方は、以下の2つのパタンに分かれる。
+
+- コードの1文字目を大文字にする
+    - 例）$\delta$の大文字$\Delta$ は `\Delta`
+    - 例）$\phi$の大文字$\Phi$ は `\Phi`
+- アルファベットの大文字をそのまま使う。
+    - 例）$\alpha$の大文字Aは`A`
+    - 例）$\beta$の大文字Bは`B`
+
+
+:::callout-note
+## 記号の使い分け
+- 和算の記号$\sum$ は`\Sigma`ではなく、`\sum`
+    - `\sum`: $\sum$
+    - `\Sigma`: $\Sigma$
+- 乗算の記号$\prod$は`\Pi` ではなく`\prod`
+    - `\prod`: $\prod$
+    - `\Pi`: $\Pi$
+:::
+
+## 練習
+
+各自持参した数学の教科書に載っている数式を、LaTeX記法を使ったMarkdown文書で再現してみよう！
+
+
+## 第5回の課題
+
+
+Markdownで以下の問題に対する解答を作成し、解答を記した**Markdown**ファイル （拡張子が `.md`）と**PDF**ファイル（拡張子が`.pdf`）の2つのファイルを提出しなさい。その際、以下の注意を守ること。
+
+- 第1レベルの見出しを「数理セミナーI：課題5」にしなさい。
+  - 見出しの後に氏名と学籍番号を記しなさい。
+- 各問は見出し（第2レベルの見出し）を付けて区別しなさい。
+- 解答の前に問題文をそのまま書き写しなさい。
+- 解答には、途中の計算過程も記しなさい。
+  - 問と解答は見出し（第3レベルの見出し）を付けて区別しなさい。
+- **提出期限：2023年12月4日（月）午後10時**（日本時間）
+- 提出方法：ファイルをメールに添付して担当教員に送信する
+  - メールの題名：「数理セミナー1の課題5」
+  - 提出するファイル名は `kadai5_StudentID.md` と`kadai5_StudentID.pdf`
+    - ファイル名の**StudentID の部分は自分の学籍番号に置き換えること**（例：`kadai5_1270999.md`）
+
+
+
+:::callout-note
+## 導関数の定義
+以下の式で表される$f'(x)$を$f(x)$の導関数とよぶ。
+$$
+f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}
+$$
+:::
+
+#### 問1：$f(x)$が微分可能な関数であるとき、次の極限を$a$、$f(a)$、$f'(a)$を用いて表わせ。{.unnumbered}
+
+- $\displaystyle \lim_{h \to 0} \frac{f(a + 2h) - f(a)}{h}$
+- $\displaystyle \lim_{h \to 0} \frac{f(a - h) - f(a)}{h}$
+
+#### 問2：つぎの関数$y=f(x)$の2階までの導関数を求めよ。{.unnumbered}
+
+- $\displaystyle x^4 - 2x^3 + x + 1$
+- $\displaystyle e^{-x^2}$
+
+#### 問3：つぎの方程式を解きなさい。 {.unnumbered}
+
+- $\displaystyle \log (x -1) + \log 2 = \log x$
+- $\displaystyle \log_3 x - \log_9 (x + 2) = 0$
+
+
+
+## 参考文献
+
+LaTeXについてもっと知りたい者には以下の参考書を勧める。これ1冊あれば、卒業まで困らないはずだ。ただし、2023年12月に改訂第9版が発売予定なので、購入するなら新しい版が出てからにしたほうがよいだろう。
+
+- 奥村晴彦、黒木裕介. 2020.『[[改訂第8版] LaTeX 2$\varepsilon$ 美文書作成入門](https://www-opac.lib.kppuc.ac.jp/opac/volume/658924?current=1&q=%E7%BE%8E%E6%96%87%E6%9B%B8&total=7&trans_url=%2Fopac%2Fsearch%3Fcount%3D50%26defaultpage%3D1%26defaulttarget%3Dlocal%26order%3Drecommended_d%26q%3D%25E7%25BE%258E%25E6%2596%2587%25E6%259B%25B8%26search%3D%25E6%25A4%259C%2B%25E7%25B4%25A2%26searchmode%3Dnormal)』技術評論社.
