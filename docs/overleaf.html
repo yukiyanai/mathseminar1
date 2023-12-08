@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -61,6 +95,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -137,7 +173,25 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">このページの内容</h2>
+   
+  <ul>
+  <li><a href="#markdown-からpdfへの変換" id="toc-markdown-からpdfへの変換" class="nav-link active" data-scroll-target="#markdown-からpdfへの変換"><span class="header-section-number">4.1</span> Markdown からPDFへの変換</a></li>
+  <li><a href="#overleaf入門" id="toc-overleaf入門" class="nav-link" data-scroll-target="#overleaf入門"><span class="header-section-number">4.2</span> Overleaf入門</a>
+  <ul class="collapse">
+  <li><a href="#overleaf-のアカウント登録" id="toc-overleaf-のアカウント登録" class="nav-link" data-scroll-target="#overleaf-のアカウント登録"><span class="header-section-number">4.2.1</span> Overleaf のアカウント登録</a></li>
+  <li><a href="#overleaf-で日本語文書を作る" id="toc-overleaf-で日本語文書を作る" class="nav-link" data-scroll-target="#overleaf-で日本語文書を作る"><span class="header-section-number">4.2.2</span> Overleaf で日本語文書を作る</a></li>
+  <li><a href="#overleaf-で-latex" id="toc-overleaf-で-latex" class="nav-link" data-scroll-target="#overleaf-で-latex"><span class="header-section-number">4.2.3</span> Overleaf で LaTeX</a></li>
+  </ul></li>
+  <li><a href="#第6回の課題" id="toc-第6回の課題" class="nav-link" data-scroll-target="#第6回の課題"><span class="header-section-number">4.3</span> 第6回の課題</a>
+  <ul class="collapse">
+  <li><a href="#問1" id="toc-問1" class="nav-link" data-scroll-target="#問1">問1</a></li>
+  <li><a href="#問2" id="toc-問2" class="nav-link" data-scroll-target="#問2">問2</a></li>
+  </ul></li>
+  <li><a href="#参考文献" id="toc-参考文献" class="nav-link" data-scroll-target="#参考文献"><span class="header-section-number">4.4</span> 参考文献</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -159,9 +213,165 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>準備中</p>
+<p>今日の目標</p>
+<ul>
+<li>数式を含むMarkdownファイルをPDFに変換する方法を覚える</li>
+<li>Overleaf で LaTeX文書を作成する方法を身につける</li>
+</ul>
+<section id="markdown-からpdfへの変換" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="markdown-からpdfへの変換"><span class="header-section-number">4.1</span> Markdown からPDFへの変換</h2>
+<p>LaTeX 記法の数式を含むMarkdownファイルは、<strong><a href="https://pandoc-doc-ja.readthedocs.io/ja/latest/users-guide.html">Pandoc</a></strong>（と LuaLaTeX）を使ってPDFに変換することができる。</p>
+<p>実習のため、課題5（あるいは前回の実習）で作成したMarkdownファイルの内容をPDFに変換してみよう。</p>
+<p>まず、前回作成したファイル（ここでは、<code>kadai5_1270xxx.md</code> としているが、各自のファイル名に置き換えること）をコピーして、<code>eg_lec06.md</code> というファイルを新たに作成し、それをVS Code で開こう。そのために、ターミナル（端末）で以下を実行する。</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>$ cd ~/seminar1</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>$ cp kadai5_1270xxx.md eg_lec06.md</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>$ code eg_lec06.md</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>これをPDFに変換する前に、少し工夫しよう。 PDFにタイトル（およびサブタイトル）と、著者名 (author)、作成日 (date) を表示するために、 ファイルの<strong>最上部に</strong>以下の情報を書き足す。ただし、<code>author</code> には自分の氏名と学籍番号を書くこと。</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "数理マネジメントセミナーⅠ"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "課題5b"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "矢内 勇生（1270xxx）"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023年12月11日"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>ここで書いた、<code>---</code> （ハイフン3つで1組）で囲まれた部分を<strong>YAMLヘッダ</strong>という。YAMLとは、“YAML Ain’t Markup Language” （YAMLはマークアップ言語ではない）のことであり、ファイルの情報（や構造）を指定するために使う。これをファイルの最上部、すなわちヘッダ (header) に置くのでYAMLヘッダと呼ばれる。</p>
+<p>YAMLヘッダの書き方について注意すべき点を以下に挙げる。</p>
+<ul>
+<li>ヘッダの開始（最初の、<code>---</code> ）は、必ずファイルの1行目冒頭におく（改行やスペースを入れない）</li>
+<li>ヘッダに記入する各項目の名前（title, subtibleなど）は、半角で記入し、その後に<strong>スペース無しで</strong>半角のコロン <code>:</code> を入力する</li>
+<li>コロン <code>:</code> の直後に<strong>半角スペースを1つ</strong>（以上）入れる</li>
+<li>各項目の内容は、<strong>半角の引用符</strong> <code>"</code> で囲む</li>
+<li>項目は1行に1つ</li>
+<li>YAMLヘッダ内に空行（何も記入していない行）を残さない</li>
+<li>ヘッダは <code>---</code> で必ず閉じる</li>
+</ul>
+<p>タイトルと氏名はヘッダに書いたので、元々のファイルに書いてあったタイトル、氏名、日付等は削除してもよい。ここまでできたら、ファイルを保存する。</p>
+<p>次に、この Markdown ファイルをPDFをに変換するために、ターミナル（端末）で以下のコードを実行する。ただし、<code>eg_lec06.md</code> は上で編集したファイルのことなので、ファイル名が異なる場合は適宜変更する。同様に、<code>eg_lec06.pdf</code> はこれから作成するファイル名なので、他の名前を付けたい場合は変更する。途中のスペース、記号、大文字と小文字の区別などに注意しながら入力しよう。</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>$ pandoc eg_lec06.md -o eg_lec06.pdf --pdf-engine=lualatex -V documentclass=ltjsarticle</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>うまくいけば、現在の作業ディレクトリにPDFファイルができる。確認してみよう。 すべてのファイルを表示するなら、</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>$ ls</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>とすればよいが、PDF（ファイル名拡張子が <code>.pdf</code> のもの）のみを表示するために、以下のようにする。</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>$ ls | grep *.pdf</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>上で指定した名前のPDFが見つかれば成功である。</p>
+</section>
+<section id="overleaf入門" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="overleaf入門"><span class="header-section-number">4.2</span> Overleaf入門</h2>
+<p>簡単な文書であれば、MarkdownをPDFに変換すれば事足りる。しかし、少し複雑な文書を書きたいとき、Markdownだけでは細かい調整が困難な場合がある。そんなときは、LaTeXを直接使うほうが手っ取り早い。しかし、初心者がLaTeXを使いこなすのはやや難しい。そこで、ウェブブラウザ上でLaTeXを利用することができる、<strong>Overleaf</strong>を使うことにしよう。</p>
+<section id="overleaf-のアカウント登録" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="overleaf-のアカウント登録"><span class="header-section-number">4.2.1</span> Overleaf のアカウント登録</h3>
+<p>まず、ウェブブラウザ (Firefox) を起動し、<a href="https://www.overleaf.com/">Overleaf</a> のサイトを開く。</p>
+<p>次に、<strong>無料アカウント</strong>の登録を行う。ページの右上にある “Register” をクリックする。Gmail を利用している者は、“Register using Google” で登録することができる。それ以外の者は、EmailとPasswordを入力し、登録する。登録の確認のためにメールを受け取る必要があるので、すぐに開くことができるメールアドレスを入力すること。また、パスワードは忘れないように！</p>
+</section>
+<section id="overleaf-で日本語文書を作る" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="overleaf-で日本語文書を作る"><span class="header-section-number">4.2.2</span> Overleaf で日本語文書を作る</h3>
+<p>登録が完了したら、さっそく Overleaf を使ってみよう。 左上の “New Project” をクリックするといくつか選択肢が提示されるので、“Blank Project” をクリックして新しいプロジェクト（文書）を作成する。プロジェクトに名前を付けるよう促されるので、適当な名前（例：初めてのOverleaf）を入力し、“Create” をクリックする。</p>
+<p>プロジェクトできると、画面が縦に3分割されたような表示になる。左の列（おそらく一番幅が狭い）は、ファイル一覧で、最初は <code>main.tex</code> というファイルのみが表示されている。真ん中の列（背景が黒い列）がエディタ画面である。ここにファイルの中身が表示されており、ファイルの編集をここで行う。右の列に、ファイルのプレビューが表示されている。最終的にどのようなPDFが出来上がるか、確認することができる。</p>
+<p>プレビューを見てみると、登録した名前（アルファベットで入力した場合）や今日の日付（英語）と、プロジェクト名のうちアルファベットで書いた部分が表示されているだろう。日本語は表示されていないはずだ。これには後で対処する。</p>
+<p>続いて、エディタに注目しよう。LaTeX文書の中身を見てみると、<code>\begin{document}</code> という命令と、<code>\end{document}</code> という命令が見つかるだろう。LaTeX記法の数式を勉強したときに見たように、LaTeXでは<code>\begin{}</code>と<code>\end{}</code>をペアで利用することで、何らかの環境 (environment) を作る。<code>document</code> 環境は最も基本的な環境であり、LaTeX文書の中身はこの<code>document</code> 環境の中、つまり<code>\begin{document}</code> と<code>\end{document}</code>の間に書く。</p>
+<p><code>\begin{document}</code>よりも上の部分は<strong>プレアンブル</strong> (preamble) と呼ばれ、ここで文書の構造や、追加で利用するパッケージ（数学記号や図の表示など）を指定する。</p>
+<p>現時点で日本語が表示できないのは、プレアンブルが適切に設定されていないためである。そこで、プレアンブルを以下の内容に置き換えよう。</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[12pt]{<span class="ex">ltjsarticle</span>}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[ipaex]{<span class="ex">luatexja-preset</span>}</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[margin=1in]{<span class="ex">geometry</span>} <span class="co">% 余白の設定</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath,amssymb,bm</span>}   <span class="co">% 数学記号を追加</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx,color</span>}       <span class="co">% 画像の挿入に必要</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">setspace</span>}</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\doublespacing</span>                    <span class="co">% ダブルスペースにする</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{数理セミナーI：第6回}</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{矢内~勇生（1270xxx）}</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>ただし、<code>author</code> の内容は、自分の氏名と学籍番号に置き換えること。</p>
+<p>これだけではまだ日本語が正しく表示されない。 左上にあるMenuをクリックして、Compiler を “pdfLaTeX” から “LuaLaTeX” に変更する。 ここまでできたら、プレビュー画面の上にある “Recompile” をクリックしてみよう。 日本語が表示されるはずだ。</p>
+</section>
+<section id="overleaf-で-latex" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="overleaf-で-latex"><span class="header-section-number">4.2.3</span> Overleaf で LaTeX</h3>
+<p>ここからは、<code>\begin{document}</code> と<code>\end{document}</code>の間に文章を書こう。</p>
+<p>通常の日本語文書は普段通り書けばよい。 ただし、文を改行しても、出来上がった文章で改行されるとは限らない。 段落を変えたいときは、1行空けてから文を書けばよい。</p>
+節タイトルは、<code>\section{節タイトル}</code> で付ける。 同様に、小節は<code>\subsection{小節タイトル}、小小節は</code>
+<p>`である。</p>
+<p>太字は<code>\textbf{太字}</code>で、イタリックは<code>\textit{italics}</code>で書ける。 文字に色を付けたいときは、<code>\textcolor{色}{文字}</code>とする。例えば、<code>\textcolor{red}{この文は赤字になる}</code>のようにする。</p>
+<p>LaTeX記法の数式は以前勉強したが、Markdownの場合とやや異なるところがあるので、以下に違いをいくつか示す。</p>
+<ul>
+<li>文中に数式を入れたいときは <code>$</code> と <code>$</code> で囲む（これは Markdown と同じ）</li>
+<li>独立行の数式（数式番号なし）は <code>\[</code> と<code>\]</code> で囲む（Markdownでは、<code>$$</code>と<code>$$</code>だった）。たとえば、</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\bar</span><span class="ss">{x} = </span><span class="sc">\frac</span><span class="ss">{1}{N} </span><span class="sc">\sum</span><span class="ss">_{n=1}^N x_n</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>とする。</p>
+<ul>
+<li><code>align</code> 環境を使うと、番号付きの数式が書ける。たとえば、</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\bar</span><span class="ss">{x} = </span><span class="sc">\frac</span><span class="ss">{1}{N} </span><span class="sc">\sum</span><span class="ss">_{n=1}^N x_n</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>とすると、数式に自動的に番号が振られる。</p>
+<ul>
+<li>数式番号に後で言及したいときは、数式にラベル (label) を付けておくと便利である。たとえば、</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\bar</span><span class="ss">{x} = </span><span class="sc">\frac</span><span class="ss">{1}{N} </span><span class="sc">\sum</span><span class="ss">_{n=1}^N x_n </span><span class="sc">\label</span><span class="ss">{mean}</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>とする。この式が (2) だとして、この番号に言及したいときは、「<code>\eqref{mean}</code>式より〜」と書くと、「(2) 式より〜」と表示される。つまり、カッコ付きの番号が自動的に挿入される。この書き方を利用すると、数式を追加したり削除したりして数式番号が変わったとしても、LaTeXが自動的に正しい番号を挿入してくれる。</p>
+<ul>
+<li>数式番号付きで複数行の数式を書きたいときは、次のようにする。</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\bar</span><span class="ss">{x} </span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ss">  &amp;= </span><span class="sc">\frac</span><span class="ss">{1}{N} </span><span class="sc">\sum</span><span class="ss">_{n=1}^N x_n </span><span class="sc">\\</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ss">  &amp;= </span><span class="sc">\frac</span><span class="ss">{1}{N} (x_1 + x_2 + </span><span class="sc">\cdots</span><span class="ss"> + x_N)</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>各行に番号が付される。</p>
+<ul>
+<li>数式番号なしで複数行の数式を書きたいときは、次のようにする。</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align*</span>}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\bar</span><span class="ss">{x} </span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ss">  &amp;= </span><span class="sc">\frac</span><span class="ss">{1}{N} </span><span class="sc">\sum</span><span class="ss">_{n=1}^N x_n </span><span class="sc">\\</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ss">  &amp;= </span><span class="sc">\frac</span><span class="ss">{1}{N} (x_1 + x_2 + </span><span class="sc">\cdots</span><span class="ss"> + x_N)</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align*</span>}</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>その他の使い方については、<a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</a>を参照されたい。ウェブ上にも多くの情報があるが、基本的な使い方は<a href="https://texwiki.texjp.org/?LaTeX%E5%85%A5%E9%96%80">TeX Wiki</a>にまとめられている。</p>
+</section>
+</section>
+<section id="第6回の課題" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="第6回の課題"><span class="header-section-number">4.3</span> 第6回の課題</h2>
+<p>Overleafで以下の問題に対する解答を作成し、解答を記した<strong>PDF</strong>ファイル （拡張子が <code>.pdf</code>）を提出しなさい。その際、以下の注意を守ること。</p>
+<ul>
+<li>文書のタイトルを「数理セミナーI：課題6」にしなさい。
+<ul>
+<li><code>author</code> に氏名（学籍番号）を記しなさい。</li>
+<li><code>date</code> に作成日を記しなさい。</li>
+</ul></li>
+<li>各問は節タイトルを付けて区別しなさい。</li>
+<li><strong>提出期限：2023年12月18日（月）午後10時</strong>（日本時間）</li>
+<li>提出方法：ファイルをメールに添付して担当教員に送信する
+<ul>
+<li>メールの題名：「数理セミナー1の課題6」</li>
+<li>提出するファイル名は <code>kadai6_StudentID.pdf</code>
+<ul>
+<li>ファイル名の<strong>StudentID の部分は自分の学籍番号に置き換えること</strong>（例：<code>kadai6_1270999.pdf</code>）</li>
+</ul></li>
+</ul></li>
+</ul>
+<section id="問1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="問1">問1</h3>
+<p><a href="https://yukiyanai.github.io/mathseminar1/latex.html#%E7%AC%AC5%E5%9B%9E%E3%81%AE%E8%AA%B2%E9%A1%8C">第5回の課題</a> をOverleaf上で実行しなさい（解答を綺麗に整理すること）。</p>
+</section>
+<section id="問2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="問2">問2</h3>
+<p>大学入学後に新たに学習した数学の定理から、あなたが素晴らしい（美しい、役に立つ）と思うものを1つ選び、定理の内容を述べた後、その証明を記しなさい（証明を自力で考える必要はない）。最後に、その定理が素晴らしい（美しい、役に立つ）と思う理由を述べなさい。</p>
+</section>
+</section>
+<section id="参考文献" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">4.4</span> 参考文献</h2>
+<ul>
+<li>奥村晴彦、黒木裕介. 2020.『<a href="https://www-opac.lib.kppuc.ac.jp/opac/volume/658924?current=1&amp;q=%E7%BE%8E%E6%96%87%E6%9B%B8&amp;total=7&amp;trans_url=%2Fopac%2Fsearch%3Fcount%3D50%26defaultpage%3D1%26defaulttarget%3Dlocal%26order%3Drecommended_d%26q%3D%25E7%25BE%258E%25E6%2596%2587%25E6%259B%25B8%26search%3D%25E6%25A4%259C%2B%25E7%25B4%25A2%26searchmode%3Dnormal">[改訂第8版] LaTeX 2<span class="math inline">\(\varepsilon\)</span> 美文書作成入門</a>』技術評論社.</li>
+<li>奥村晴彦、黒木裕介. 2023.『[改訂第9版] LaTeX 2<span class="math inline">\(\varepsilon\)</span> 美文書作成入門』技術評論社.</li>
+<li>坂東慶太. 2019.『<a href="https://www-opac.lib.kppuc.ac.jp/opac/volume/646682?current=1&amp;q=%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%84%E3%82%89%E3%81%9A%E3%81%AELaTeX%E5%85%A5%E9%96%80&amp;total=1&amp;trans_url=%2Fopac%2Fsearch%3Fcount%3D50%26defaultpage%3D1%26defaulttarget%3Dlocal%26order%3Drecommended_d%26q%3D%25E3%2582%25A4%25E3%2583%25B3%25E3%2582%25B9%25E3%2583%2588%25E3%2583%25BC%25E3%2583%25AB%25E3%2581%2584%25E3%2582%2589%25E3%2581%259A%25E3%2581%25AELaTeX%25E5%2585%25A5%25E9%2596%2580%26search%3D%25E6%25A4%259C%2B%25E7%25B4%25A2%26searchmode%3Dnormal">インストールいらずのLaTeX入門：Overleafで手軽に文書作成</a>』東京図書.</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
