@@ -36,28 +36,28 @@ Overleafで作成するLaTeXの文書に図を挿入するためには、以下�
 
 図を挿入するための基本的な命令は、
 ```tex
-includegraphics{ファイル名}
+\includegraphics{ファイル名}
 ```
 である。例えば、`figs`フォルダ内にある `file1.pdf` という名前の図を挿入したいときは、
 ```tex
-includegraphics{figs/file1.pdf}
+\includegraphics{figs/file1.pdf}
 ```
 とする。こうすると、元の図の大きさのまま、LaTeX文書に図が挿入される。
 
 図の大きさを調整したいときは、
 ```tex
-includegraphics[scale=0.8]{figs/file1.pdf}
+\includegraphics[scale=0.8]{figs/file1.pdf}
 ```
 のように`[]`内で大きさを指定する。`scale=x` とすると、元の図の`x`倍の大きさに拡大・縮小される。上の例では0.8倍になる。
 あるいは
 ```tex
-includegraphics[width=0.6\textwidth]{figs/file1.pdf}
+\includegraphics[width=0.6\textwidth]{figs/file1.pdf}
 ```
 とすると、図の幅 (width) が文章が表示される幅 (`\textwidth`) の0.6倍になる。もちろん、0.6の代わりに好きな数字を選ぶことができる。
 文書の幅に合わせるのではなく、特定の単位で幅を決めることもできる。
 例えば、
 ```tex
-includegraphics[width=10cm]{figs/file1.pdf}
+\includegraphics[width=10cm]{figs/file1.pdf}
 ```
 とすれば、図の幅が10cmになる。幅の代わりに図の高さ (height) を指定することもできる。
 
