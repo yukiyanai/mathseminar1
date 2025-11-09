@@ -6,13 +6,13 @@ language: jayy.yml
 book: 
   title: "数理マネジメントセミナーI"
   author: "矢内 勇生"
-  date: "November 12, 2023"
+  date: "November 10, 2023"
   sidebar: 
     style: docked
     background: light
   page-navigation: true
   page-footer: 
-    center: "Copyright 2023, Yuki Yanai"
+    center: "Copyright 2023-2025, Yuki Yanai"
     background: light
     border: false
   search: true
