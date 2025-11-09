@@ -11,9 +11,9 @@
 
 - 第1回から第3回まで（小林豊先生ご担当）の資料は[こちら](https://kut-econ.github.io/math_seminar1/)
 
-|      | 日付（すべて月曜2限） | 内容 | ウェブ資料 |
+|      | 日付（2限） | 内容 | ウェブ資料 |
 | :--- | :--- |  :--- |  :--- |
-| 第4回 | 11月10日 | Markdown入門 | [Markdownを用いた文章作成](markdown.html) |
-| 第5回 | 11月17日 | LaTeX入門 | [LaTeX入門](latex.html) |
-| 第6回 | 11月27日 | LaTeX応用 | [Overleaf の使い方](overleaf.html) |
-| 第7回 | 12月1日 | 総括 | [まとめ](summary.html) |
+| 第4回 | 11月10日（月） | Markdown入門 | [Markdownを用いた文章作成](markdown.html) |
+| 第5回 | 11月17日 （月）| LaTeX入門 | [LaTeX入門](latex.html) |
+| 第6回 | 11月27日 （木）| LaTeX応用 | [Overleaf の使い方](overleaf.html) |
+| 第7回 | 12月1日 （月）| 総括 | [まとめ](summary.html) |
