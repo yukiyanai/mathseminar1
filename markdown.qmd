@@ -86,14 +86,22 @@ $ code exercise4.md
 
 
 
-- 提出期限：2025年11月16日（土）正午（日本時間）
+- 提出期限：**2025年11月<s>16日（土）</s> 26日（水）正午**（日本時間）
 - 提出方法：ファイルをメールに添付して担当教員に送信する
   - メールの題名：「数理セミナー1の課題4」
   - 提出するファイルは以下の2つ（以下のファイル名の**StudentID の部分は自分の学籍番号に置き換えること**。例：`kadai4_1290999.md`）
     - `kadai4_StudentID.md`
     - `kadai4_StudentID.pdf`
-    
+
     
 
+:::{.callout-note}
+## 注意：メールの書き方について
+メールを送信する前に、以下のリンク先でメールの書き方を確認してください。
+
+- [https://www.rikkyo.ac.jp/about/activities/fd/cdshe/mknpps000001ri7e-att/MoW_10.pdf](https://www.rikkyo.ac.jp/about/activities/fd/cdshe/mknpps000001ri7e-att/MoW_10.pdf)
+- [http://www2.ipcku.kansai-u.ac.jp/~iwamoto/email.pdf](http://www2.ipcku.kansai-u.ac.jp/~iwamoto/email.pdf)
+- [https://user.keio.ac.jp/~matsuoka/mailsample.htm](https://user.keio.ac.jp/~matsuoka/mailsample.htm)
+:::
 
 
