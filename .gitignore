@@ -7,3 +7,5 @@
 .quatro
 
 /.quarto/
+
+**/*.quarto_ipynb
